@@ -1,6 +1,17 @@
+import re
+
 def word_count(s):
     # Your code here
+    s = s.lower()
+    s = re.sub(r'[":;,.\-+=/\\|[\]{}()*^&]', '', s)
+    words = s.split()
 
+    word_counts = {}
+
+    for word in words:
+        word_counts[word] = word_counts.get(word, 0) + 1
+
+    return word_counts        
 
 
 if __name__ == "__main__":

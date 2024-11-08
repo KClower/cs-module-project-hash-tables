@@ -1,5 +1,17 @@
 def no_dups(s):
     # Your code here
+    if not s:
+        return ""
+    
+    used = set()
+    result = []
+
+    for word in s.split():
+        if word not in used:
+            used.add(word)
+            result.append(word)
+
+    return " ".join(result)
 
 
 
